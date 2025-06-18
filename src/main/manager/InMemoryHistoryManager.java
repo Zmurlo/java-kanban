@@ -5,7 +5,7 @@ import main.task.ask;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-public abstract class InMemoryHistoryManager implements HistoryManager {
+public class InMemoryHistoryManager implements HistoryManager {
     private static final int MAX_HISTORY_SIZE = 10;
     private final LinkedList<Object> history = new LinkedList<>().reversed();
 

@@ -4,10 +4,11 @@ import main.task.Epic;
 import main.task.Subtask;
 import main.task.ask;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public interface TaskManager {
-    List <ask> getHistory();
+    ArrayList<Object> getHistory();
     ask getTask(int id);
     Subtask getSubtask(int id);
     Epic getEpic(int id);

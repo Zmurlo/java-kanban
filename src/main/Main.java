@@ -23,7 +23,7 @@ public class Main {
 
         // Печатаем историю
         System.out.println("История просмотров:");
-        for (ask t : manager.getHistory()) {
+        for (Object t : manager.getHistory()) {
             System.out.println(t);
         }
     }

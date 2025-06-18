@@ -1,6 +1,5 @@
 package main.manager;
 
-import main.manager.*;
 import main.task.*;
 
 import java.util.ArrayList;
@@ -24,7 +23,7 @@ public class InMemoryTaskManager implements TaskManager {
     }
 
     @Override
-    public List<ask> getHistory() {
+    public ArrayList<Object> getHistory() {
         return historyManager.getHistory();
     }
 
