@@ -7,18 +7,18 @@ import main.task.ask;
 import java.util.List;
 
 public interface TaskManager {
-    List<ask> getHistory();
+    List <ask> getHistory();
     ask getTask(int id);
     Subtask getSubtask(int id);
     Epic getEpic(int id);
-    List<ask> getTasks();
-    List<Subtask> getSubtasks();
+    List <ask> getTasks();
+    List <Subtask> getSubtasks();
 
     void updateSubtask(Subtask subtask);
 
     void deleteSubtask(int id);
 
-    List<Epic> getEpics();
+    List <Epic> getEpics();
     int addNewTask(ask task);
     int addNewSubtask(Subtask subtask);
     int addNewEpic(Epic epic);
@@ -29,5 +29,5 @@ public interface TaskManager {
 
     void deleteEpic(int id);
 
-    List<Subtask> getEpicSubtasks(int epicId);
+    List <Subtask> getEpicSubtasks(int epicId);
 }
