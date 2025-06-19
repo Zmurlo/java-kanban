@@ -1,10 +1,10 @@
 package main.manager;
 
-import main.task.ask;
+import main.task.Task;
 import java.util.ArrayList;
 
 public interface HistoryManager {
-    void add(ask task);
+    void add(Task task);
 
     ArrayList<Object> getHistory();
 }
