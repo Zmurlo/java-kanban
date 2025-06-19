@@ -16,7 +16,6 @@ public class InMemoryHistoryManagerTest {
     void setUp() {
         historyManager = Managers.getDefaultHistory();
         task = new Task("Test", "Description", Status.NEW);
-        task.setId(1);
     }
 
     @Test
@@ -29,7 +28,6 @@ public class InMemoryHistoryManagerTest {
     void shouldNotExceedMaxHistorySize() {
         for (int i = 0; i < 15; i++) {
             Task t = new Task("main.task.Task" + i, "Desc", Status.NEW);
-            t.setId(i);
             historyManager.add(t);
         }
         assertEquals(10, historyManager.getHistory().size());
