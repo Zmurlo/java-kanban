@@ -1,16 +1,16 @@
 package main.manager;
 
-import main.task.ask;
+import main.task.Task;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-public abstract class InMemoryHistoryManager implements HistoryManager {
+public class InMemoryHistoryManager implements HistoryManager {
     private static final int MAX_HISTORY_SIZE = 10;
     private final LinkedList<Object> history = new LinkedList<>().reversed();
 
     @Override
-    public void add(ask task) {
+    public void add(Task task) {
         if (task == null) {
             return;
         }
