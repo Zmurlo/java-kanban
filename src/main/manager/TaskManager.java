@@ -2,16 +2,16 @@ package main.manager;
 
 import main.task.Epic;
 import main.task.Subtask;
-import main.task.ask;
+import main.task.Task;
 
 import java.util.List;
 
 public interface TaskManager {
-    List<ask> getHistory();
-    ask getTask(int id);
+    List<Task> getHistory();
+    Task getTask(int id);
     Subtask getSubtask(int id);
     Epic getEpic(int id);
-    List<ask> getTasks();
+    List<Task> getTasks();
     List<Subtask> getSubtasks();
 
     void updateSubtask(Subtask subtask);
@@ -19,10 +19,10 @@ public interface TaskManager {
     void deleteSubtask(int id);
 
     List<Epic> getEpics();
-    int addNewTask(ask task);
+    int addNewTask(Task task);
     int addNewSubtask(Subtask subtask);
     int addNewEpic(Epic epic);
-    void updateTask(ask task);
+    void updateTask(Task task);
     void deleteTask(int id);
 
     void updateEpic(Epic epic);

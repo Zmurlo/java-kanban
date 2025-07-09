@@ -1,14 +1,14 @@
 package main;
 
-import main.manager.*;
 import main.task.*;
+import main.manager.*;
 
 public class Main {
     public static void main(String[] args) {
         TaskManager manager = Managers.getDefault();
 
         // Создаем задачи
-        ask task = new ask("Помыть посуду", "", Status.NEW);
+        Task task = new Task("Помыть посуду", "", Status.NEW);
         int taskId = manager.addNewTask(task);
 
         Epic epic = new Epic("Переезд", "Организовать переезд");
@@ -23,7 +23,7 @@ public class Main {
 
         // Печатаем историю
         System.out.println("История просмотров:");
-        for (ask t : manager.getHistory()) {
+        for (Task t : manager.getHistory()) {
             System.out.println(t);
         }
     }

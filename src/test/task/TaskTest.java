@@ -1,7 +1,7 @@
 package test.task;
 
 import main.task.Status;
-import main.task.ask;
+import main.task.Task;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

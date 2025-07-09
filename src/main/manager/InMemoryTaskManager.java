@@ -1,6 +1,5 @@
 package main.manager;
 
-import main.manager.*;
 import main.task.*;
 
 import java.util.ArrayList;
@@ -9,7 +8,7 @@ import java.util.List;
 
 public class InMemoryTaskManager implements TaskManager {
     private final HistoryManager historyManager;
-    private final HashMap<Integer, ask> tasks = new HashMap<>();
+    private final HashMap<Integer, Task> tasks = new HashMap<>();
     private final HashMap<Integer, Subtask> subtasks = new HashMap<>();
     private final HashMap<Integer, Epic> epics = new HashMap<>();
     private int nextId = 1;
@@ -24,25 +23,25 @@ public class InMemoryTaskManager implements TaskManager {
     }
 
     @Override
-    public List<ask> getHistory() {
+    public List<Task> getHistory() {
         return historyManager.getHistory();
     }
 
     // Методы для main.task.Task
     @Override
-    public List<ask> getTasks() {
+    public List<Task> getTasks() {
         return new ArrayList<>(tasks.values());
     }
 
     @Override
-    public ask getTask(int id) {
-        ask task = tasks.get(id);
+    public Task getTask(int id) {
+        Task task = tasks.get(id);
         if (task != null) historyManager.add(task);
         return task;
     }
 
     @Override
-    public int addNewTask(ask task) {
+    public int addNewTask(Task task) {
         int id = generateId();
         task.setId(id);
         tasks.put(id, task);
@@ -50,7 +49,7 @@ public class InMemoryTaskManager implements TaskManager {
     }
 
     @Override
-    public void updateTask(ask task) {
+    public void updateTask(Task task) {
         if (tasks.containsKey(task.getId())) {
             tasks.put(task.getId(), task);
         }
