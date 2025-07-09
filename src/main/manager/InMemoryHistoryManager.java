@@ -4,10 +4,11 @@ import main.task.Task;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 public class InMemoryHistoryManager implements HistoryManager {
     private static final int MAX_HISTORY_SIZE = 10;
-    private final LinkedList<Object> history = new LinkedList<>().reversed();
+    private final LinkedList<Task> history = new LinkedList<>();
 
     @Override
     public void add(Task task) {
@@ -22,7 +23,7 @@ public class InMemoryHistoryManager implements HistoryManager {
     }
 
     @Override
-    public ArrayList<Object> getHistory() {
+    public List<Task> getHistory() {
         return new ArrayList<>(history);
     }
 }
